@@ -40,9 +40,10 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
+    /* Адаптивный размер текста для телефонов */
     @media (max-width: 600px) {
       .quote {
-        font-size: 34px; 
+        font-size: 8vw; /* автоматическая подстройка размера под ширину экрана */
         max-width: 90%;
       }
     }
@@ -101,7 +102,8 @@
     function showRandomQuote() {
       const quoteEl = document.getElementById("quote");
       const randomIndex = Math.floor(Math.random() * quotes.length);
-      quoteEl.textContent = quotes[randomIndex];
+      // Используем innerHTML вместо textContent, чтобы <br> работал
+      quoteEl.innerHTML = quotes[randomIndex];
     }
 
     showRandomQuote();
