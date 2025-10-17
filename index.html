@@ -9,7 +9,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- важно для мобильных -->
+
   <style>
+    :root{
+      --quote-width-vw: 80vw; /* ширина блока цитаты относительно ширины экрана (измени на 90vw если нужно) */
+    }
+
+    html,body{
+      height:100%;
+    }
+
     body {
       font-family: 'Spectral', serif;
       font-weight: 200;
@@ -25,26 +35,38 @@
       box-sizing: border-box;
     }
 
+    /* контейнер цитаты: ширина установлена в процентах ширины экрана */
     .quote {
-      font-size: 26px; /* базовый размер для десктопа */
-      line-height: 1.5;
-      max-width: 700px;
-      text-shadow: 0 0 10px rgba(255,255,255,0.25);
+      /* ширина блока: 80% ширины экрана, можно подправить в :root */
+      width: var(--quote-width-vw);
+      max-width: 700px; /* если вдруг на очень широких экранах — ограничение */
+      /* адаптивный размер шрифта:
+         clamp(min, preferred, max):
+         - минимум 28px
+         - предпочтительно 11.5vw (подстраивается под экран)
+         - максимум 64px */
+      font-size: clamp(28px, 11.5vw, 64px);
+      line-height: 1.35;
+      text-shadow: 0 0 10px rgba(255,255,255,0.18);
       opacity: 0;
-      transform: translateY(10px);
-      animation: fadeIn 1s ease forwards;
+      transform: translateY(8px);
+      animation: fadeIn 0.9s ease forwards;
+      /* переносы и перенос слов */
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      margin: 0 auto;
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
+      from { opacity: 0; transform: translateY(8px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* Адаптивный размер текста для телефонов */
-    @media (max-width: 600px) {
+    /* Если хочешь ещё крупнее только для очень узких экранов — можно увеличить */
+    @media (max-width: 380px) {
       .quote {
-        font-size: 8vw; /* автоматическая подстройка размера под ширину экрана */
-        max-width: 90%;
+        font-size: clamp(30px, 13.5vw, 72px);
       }
     }
   </style>
@@ -93,7 +115,7 @@
       "Wait, is this the most amazing guy<br>looking at this message?<br>Well, you're lucky, cuz your girl<br>loves you so so much!",
       "I'm so prud of you baby,<br>you're the best",
       "I’m your biggest supporter babes,<br>remember that 🙂‍↕️",
-      "Mr. Sir Fedor 🫡, you're guilty<br>for being the cutest poopsik in the wirld",
+      "Mr. Sir Fedor 🫡, you're guilty<br>for being the cutest poopsik in the world",
       "Here comes the sun, na na na na<br>the sun is you and you are coming if ykwim 👀",
       "You have the biggest and awesomest dick in the world",
       "My love to you is so big baby!<br>you know what else is big? 😏"
@@ -102,7 +124,7 @@
     function showRandomQuote() {
       const quoteEl = document.getElementById("quote");
       const randomIndex = Math.floor(Math.random() * quotes.length);
-      // Используем innerHTML вместо textContent, чтобы <br> работал
+      // innerHTML нужен, чтобы <br> работал
       quoteEl.innerHTML = quotes[randomIndex];
     }
 
