@@ -3,15 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Love Notes for My Baby</title>
-  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts: Old Standard TT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
   <style>
     body {
-      background-color: #1a1a1a;
-      color: #f0f0f0;
-      font-family: "Hanken Grotesk", sans-serif;
+      font-family: 'Old Standard TT', serif;
+      background-color: #101010;
+      color: #ffffff;
       height: 100vh;
       margin: 0;
-
       display: flex;
       justify-content: center;
       align-items: center;
@@ -19,10 +23,10 @@
     }
 
     .quote {
-      font-size: 24px;
+      font-size: 26px;
       line-height: 1.5;
       max-width: 700px;
-      text-shadow: 0 0 10px rgba(255, 255, 255, 0.25);
+      text-shadow: 0 0 10px rgba(255,255,255,0.25);
       opacity: 0;
       transform: translateY(10px);
       animation: fadeIn 1s ease forwards;
@@ -41,37 +45,43 @@
     const quotes = [
       "It's just the beginning baby, you got this!",
       "Glop a Glop baby, glop a glop",
-      "Just a quick reminder that I love you so so much",
+      "Just a quick reminder that I love you so so much ❤️",
       "Eres mi vida, mi amor, mi pai - te quieroooo! <3",
-      "Ты мой пухленький цветочек, куда бы тебя ни сдуло – я буду рядом",
+      "Ты мой пухленький цветочек 🌸, куда бы тебя ни сдуло – я буду рядом",
       "Ты самый самый лучший! <3",
       "Daaammmmn baby, you look so hot!!!!!",
       "Лучший мой подарочек - это ты!",
       "Пей водичку и все будет хорошо!",
       "Мой пупсик любимый, сегодня тебя ждет отличный день!",
-      "Люлю! Today's gonna be a great day babes!",
+      "Люлю! Today's gonna be a great day babes! 😘",
       "Я твоя, а ты мой – isn't it so cool!!!",
-      "You gon have so many fans, but just know that I'm the biggest fan forever! (yeah as big as your...))",
-      "Future Fedor and future Lera are so so happy I see your first 100k coming soon (just like we are))",
-      "Wait, is that the best human being reading this? Yeeeeaaaahhh it is!",
+      "You gon have so many fans, but just know that I'm the biggest fan forever! yeah as big as your...))",
+      "Future Fedor and future Lera are so so happy I see your first 100k coming soon, just like we are 👀",
+      "Wait, is that the best human being reading this? Yeeeeaaaahhh it is! 😎",
       "Baby, the world’s not ready for how amazing you are (but I am)",
-      "Ты даже кофе делаешь вкуснее просто тем, что существуешь",
-      "You’re not tired, you’re just too sexy to rest",
-      "Mi amor, hoy es para conquistar el mundo (you already conquered me)",
-      "Ты — мой дом",
+      "Ты даже кофе ☕ делаешь вкуснее просто тем, что существуешь",
+      "You’re not tired, you’re just too sexy to rest 😏",
+      "Mi amor, hoy es para conquistar el mundo 🌎 (you already conquered me)",
+      "Ты — мой дом и мой уют",
       "Oh wow, who’s that masterpiece again? oh yeah — you",
       "Пупсик, universe is literally conspiring in your favor rn",
-      "Future us is already hugging, just saying)",
-      "You shine brighter than any screen, baby (also you should wear glasses if the screen is as shiny as you)",
-      "Did you drink water? Did you stretch? Did you remember you’re perfect?",
-      "Мой маленький productivity machine",
-      "Ты делаешь даже серый день пастельно-розовым",
-      "Daang, have you been working out? Flex those biceps for me baby!",
+      "Future us is already hugging, just saying",
+      "You shine brighter than any screen, baby",
+      "Did you drink water? А то смотрииии, Лера тебя накажет 👀",
+      "Мой маленький productivity machine 🦾",
+      "Ты делаешь даже пасмурный день теплым и ярким",
+      "Daang, have you been working out? Flex those biceps for me baby! 👅",
       "I’d choose you in every universe",
       "Ты мой супер герой! Go do your superhero things!",
-      "Люлю, always and forever",
-      "I’m your biggest supporter babes",
-      "Ты мое солнышко любимое, пусть день принесет радость",
+      "Люлю, always and forever 💕",
+      "You got this baby🫰🏻",
+      "Ты мое солнышко любимое, пусть этот день принесет радость",
+      "Baaaabe, stop it with those cute ocean eyes of yours, I'm blushing 🤭",
+      "The thing you want is just around the corner baby!",
+      "My cutie patutiii, happy new day, it's gon be crazy good. Love ya!",
+      "Wait, is this the most amazing guy looking at this message? Well, you're lucky, cuz your girl loves you so so much!",
+      "I'm so prud of you baby, you're the best",
+      "I’m your biggest supporter babes, remember that"
     ];
 
     function showRandomQuote() {
